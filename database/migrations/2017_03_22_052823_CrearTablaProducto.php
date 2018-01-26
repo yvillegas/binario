@@ -19,9 +19,12 @@ class CrearTablaProducto extends Migration {
 			$table->string('prod_desc');
 			$table->string('prod_cond');
 			$table->string('prod_obs');
+			$table->string('prod_path');
 			$table->integer('marca_id')->unsigned();
 			$table->integer('cat_id')->unsigned();
+			$table->integer('mod_id')->unsigned();
 			$table->foreign('marca_id')->references('marca_id')->on('t_marca');
+			$table->foreign('mod_id')->references('mod_id')->on('t_modelo');
 			$table->foreign('cat_id')->references('cat_id')->on('t_categoria');
 			$table->timestamps();
 		});

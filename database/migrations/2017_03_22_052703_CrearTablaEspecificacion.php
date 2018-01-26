@@ -19,7 +19,9 @@ class CrearTablaEspecificacion extends Migration {
 			$table->string('esp_abrev');
 			$table->string('esp_obs');
 			$table->integer('cesp_id')->unsigned();
+			$table->integer('mod_id')->unsigned();
 			$table->foreign('cesp_id')->references('cesp_id')->on('t_cespecificacion');
+			$table->foreign('mod_id')->references('mod_id')->on('t_modelo');
 			$table->timestamps();
 		});
 	}
